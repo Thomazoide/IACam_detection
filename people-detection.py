@@ -1,7 +1,7 @@
 import cv2
 from ultralytics import YOLO
 
-model = YOLO("yolov8n.pt")
+model = YOLO("./best.pt")
 
 rtsp_url = "rtsp://admin:Pr0liant@192.168.20.237:554/stream1"
 cap = cv2.VideoCapture(rtsp_url)
