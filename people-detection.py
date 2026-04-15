@@ -1,7 +1,7 @@
 import cv2
 from ultralytics import YOLO
 
-model = YOLO("./best.pt")
+model = YOLO("./yolov8n.pt")
 
 rtsp_url = "rtsp://admin:Pr0liant@192.168.20.237:554/stream1"
 cap = cv2.VideoCapture(rtsp_url)
@@ -20,7 +20,7 @@ while True:
                 x1, y1, x2, y2 = map(int, box.xyxy[0])
                 cv2.rectangle(frame, (x1,y1), (x2, y2), (0,255,0), 2)
                 cv2.putText(frame, "Persona", (x1,y1-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0,255,0),2)
-    reframedDetection = cv2.resize(frame, (1280, 720))
+    reframedDetection = cv2.resize(frame, (1920, 1080))
     cv2.imshow("Detección", reframedDetection)
     if cv2.waitKey(1) & 0xFF == 27:
         break

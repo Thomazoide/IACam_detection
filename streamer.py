@@ -8,7 +8,7 @@ class Streamer:
         self.app = Flask(__name__)
         self.frame = None
         self.lock = threading.Lock()
-        self.port = getenv("WORKER_PORT")
+        self.port = 5000
         @self.app.route("/stream")
         def stream():
             return Response(self.generate(), mimetype="multipart/x-mixed-replace; boundary=frame")

@@ -1,2 +1,10 @@
 runs/
 tiny_set/
+.git
+__pycache__
+*.__pycache__*.pyo
+*.pyd
+.env
+venv
+datasets
+people-detector.py
